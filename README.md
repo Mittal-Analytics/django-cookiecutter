@@ -20,6 +20,17 @@ To focus on:
 - Better READMEs
 - Deployment automation
 
+#### Specifically
+
+These are the specifics.
+
+- [] Django split settings
+- [] Split requirements
+- [] Pre-commit hooks
+- [] django-envoiron
+- [] editorconfig
+- [] Deployment
+- [] README.md
 
 ## How to use this?
 
