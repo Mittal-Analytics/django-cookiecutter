@@ -24,13 +24,14 @@ To focus on:
 
 These are the specifics.
 
+- [x] README.md
 - [] Django split settings
 - [] Split requirements
 - [] Pre-commit hooks
 - [] django-envoiron
 - [] editorconfig
-- [] Deployment
-- [] README.md
+- [] remote-setup
+- [] git push deployment
 
 ## How to use this?
 
