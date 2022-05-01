@@ -35,7 +35,10 @@ These are the specifics.
 
 ## How to use this?
 
-To be done.
+```
+pip install --upgrade cookiecutter
+cookiecutter https://github.com/pratyushmittal/cookiecutter-django
+```
 
 ## How to contribute?
 
