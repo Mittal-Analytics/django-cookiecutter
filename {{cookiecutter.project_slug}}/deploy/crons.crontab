@@ -1,1 +1,1 @@
-MAILTO="pratyush@hey.com"
+MAILTO="{{cookiecutter.admin_email}}"

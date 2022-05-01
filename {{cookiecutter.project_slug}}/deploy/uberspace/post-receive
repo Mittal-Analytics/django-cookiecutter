@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=/home/getdone/webapps/{{cookiecutter.project_slug}}
+PROJECT=/home/{{cookiecutter.uberspace_login}}/webapps/{{cookiecutter.project_slug}}
 BRANCH=main
 
 echo "Project is $PROJECT with branch $BRANCH"
