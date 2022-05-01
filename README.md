@@ -49,3 +49,13 @@ Setup the local env:
 python3 -m venv .venv
 pip install -r requirements.txt
 ```
+
+Create a new project using this package:
+```
+cookiecutter https://github.com/Mittal-Analytics/django-cookiecutter
+```
+
+Make changes in that project. Then fetch changes from that repo:
+```
+bash fetch_updates.sh
+```
