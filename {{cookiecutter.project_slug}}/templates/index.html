@@ -8,7 +8,9 @@
 
   <title>{% raw %}{% block title %}{% endraw %}{{cookiecutter.project_name}}{% raw %}{% endblock %}{% endraw %}</title>
 
+  {% raw %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  {% endraw %}
 </head>
 <body>
   {% raw %}{% block content %}
