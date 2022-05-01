@@ -27,7 +27,7 @@ These are the specifics.
 - [x] README.md
 - [x] Django split settings
 - [x] Split requirements
-- [] Pre-commit hooks
+- [x] Pre-commit hooks
 - [x] django-envoiron
 - [] editorconfig
 - [] remote-setup
