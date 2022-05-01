@@ -25,9 +25,9 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cached_db"
 # TOOLBAR CONFIGURATION
 # https://github.com/django-debug-toolbar/django-debug-toolbar#installation
 
-INSTALLED_APPS += [
+INSTALLED_APPS += [ # noqa
     "debug_toolbar",
-]  # noqa
+]
 
 MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",

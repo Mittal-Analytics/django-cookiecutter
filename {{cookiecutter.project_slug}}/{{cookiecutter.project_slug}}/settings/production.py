@@ -1,6 +1,6 @@
 """Production settings and globals."""
 
-from .base import *
+from .base import *  # noqa
 
 DEBUG = False
 PRODUCTION = True
@@ -9,7 +9,7 @@ ALLOWED_HOSTS = [
 ]
 
 TEMP_ROOT = "/tmp"
-DATA_ROOT = BASE_DIR.parent / "data"
+DATA_ROOT = BASE_DIR.parent / "data" # noqa
 STATIC_ROOT = DATA_ROOT / "www" / "static"
 STATIC_URL = "https://cdn-static.example.com/"
 MEDIA_ROOT = DATA_ROOT / "www" / "media"
