@@ -29,7 +29,7 @@ These are the specifics.
 - [x] Split requirements
 - [x] Pre-commit hooks
 - [x] django-envoiron
-- [] editorconfig
+- [x] editorconfig
 - [] remote-setup
 - [] git push deployment
 
