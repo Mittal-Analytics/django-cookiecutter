@@ -1,4 +1,8 @@
 {
   "project_name": "Project Name",
-  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}"
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "admin_email": "foo@bar.com",
+  "admin_name": "Foo Bar",
+  "uberspace_login": "foobar",
+  "domain_name": "www.example.com"
 }
