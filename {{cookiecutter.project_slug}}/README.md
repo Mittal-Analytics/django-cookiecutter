@@ -16,7 +16,7 @@
 ```bash
 # Clone repository
 git clone <repo-link>
-cd {{ cookiecutter.project_slug }}
+cd {{cookiecutter.project_slug}}
 
 # creating virtual env
 # python3 -m venv path/to/venv
@@ -25,13 +25,13 @@ source .venv/bin/activate
 
 # create a new database
 mysql -u root -p --default-character-set=utf8mb4
-CREATE DATABASE {{ cookiecutter.project_slug }}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
-CREATE DATABASE test_{{ cookiecutter.project_slug }}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE {{cookiecutter.project_slug}}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE test_{{cookiecutter.project_slug}}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 
 # Create MySQL users
 create user 'py-user' identified by 'p@@sWord';
-grant all privileges on {{ cookiecutter.project_slug }}_db.* to 'py-user';
-grant all privileges on test_{{ cookiecutter.project_slug }}_db.* to 'py-user';
+grant all privileges on {{cookiecutter.project_slug}}_db.* to 'py-user';
+grant all privileges on test_{{cookiecutter.project_slug}}_db.* to 'py-user';
 flush privileges;
 exit
 
