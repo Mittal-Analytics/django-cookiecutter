@@ -1,12 +1,12 @@
-# About {{ cookiecutter.project_name }}
+# About Getting Things Done
 
-<< What does this project do >>
+A project to manage tasks using David Allen's GTD approach.
 
 ## Problem statement
 
-- << ______ >>
-- is a problem for << ------ >>
-- because << --------- >>.
+- Managing tasks
+- is a problem for everyone
+- because they don't get done.
 
 
 ## Getting the local server running
