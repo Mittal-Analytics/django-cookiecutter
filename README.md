@@ -25,10 +25,10 @@ To focus on:
 These are the specifics.
 
 - [x] README.md
-- [] Django split settings
-- [] Split requirements
+- [x] Django split settings
+- [x] Split requirements
 - [] Pre-commit hooks
-- [] django-envoiron
+- [x] django-envoiron
 - [] editorconfig
 - [] remote-setup
 - [] git push deployment

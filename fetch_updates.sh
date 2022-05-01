@@ -4,3 +4,4 @@ find getting_things_done -type f | xargs sed -i '' 's/getting_things_done/{{cook
 mv getting_things_done/getting_things_done getting_things_done/"{{cookiecutter.project_slug}}"
 mv "{{cookiecutter.project_slug}}" backup_"{{cookiecutter.project_slug}}"
 mv getting_things_done "{{cookiecutter.project_slug}}"
+rm backup_"{{cookiecutter.project_slug}}"
