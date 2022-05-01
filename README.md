@@ -30,8 +30,9 @@ These are the specifics.
 - [x] Pre-commit hooks
 - [x] django-envoiron
 - [x] editorconfig
-- [] remote-setup
-- [] git push deployment
+- [x] remote-setup
+- [x] git push deployment
+- [x] github actions for tests
 
 ## How to use this?
 

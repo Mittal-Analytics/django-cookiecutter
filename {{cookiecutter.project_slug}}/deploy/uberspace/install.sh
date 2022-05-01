@@ -50,3 +50,9 @@ uberspace web header set {{cookiecutter.domain_name}}/static gzip_types "text/pl
 # import content
 python3.9 manage.py migrate --settings={{cookiecutter.project_slug}}.settings.production
 python3.9 manage.py createsuperuser --settings={{cookiecutter.project_slug}}.settings.production
+
+# instructions to setup git push
+echo "Remote setup done"
+echo "Run these on local"
+echo "git remote add live {{cookiecutter.uberspace_login}}:/repos/{{cookiecutter.project_slug}}.git"
+echo "git push live"
