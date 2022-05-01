@@ -55,10 +55,6 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Setup your workspace
-
-Configure your editor for automation and tooling: [Setup your workspace](https://team.screener.in/coding/1.%20Getting%20Started/automate-your-editor/).
-
 
 ## Deployment
 
