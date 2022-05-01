@@ -37,7 +37,7 @@ These are the specifics.
 
 ```
 pip install --upgrade cookiecutter
-cookiecutter https://github.com/pratyushmittal/cookiecutter-django
+cookiecutter https://github.com/Mittal-Analytics/django-cookiecutter
 ```
 
 ## How to contribute?
