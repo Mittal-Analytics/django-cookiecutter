@@ -13,15 +13,15 @@ else
     git checkout -b "raw-$folder_name"
 
     # move everything to a new folder
-    mkdir -p backup_cookie
-    rsync -a ./ backup_cookie --exclude=.venv --exclude=.git
+    mkdir -p cookie-template
+    rsync -a ./ cookie-template --exclude=.venv --exclude=.git
     # remove everything from current folder
-    find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".venv" ! -name "backup_cookie" | xargs rm -rf
+    find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".venv" ! -name "cookie-template" | xargs rm -rf
  
     echo "Deploying base project. Provide same inputs you used there."
-    cookiecutter --directory=backup_cookie  -o cookie-project
+    cookiecutter -o cookie-project cookie-template
     mv cookie-project/* .
-    rm -rf cookie-project backup_cookie
+    rm -rf cookie-project cookie-template
 
     # commit changes
     git add . -A
