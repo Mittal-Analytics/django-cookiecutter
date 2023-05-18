@@ -1,27 +1,40 @@
 # exit on error
 set -e
 
-# keep the argument same if possible
 folder_path="$1"
 folder_name="$(basename "$folder_path")"
-echo "Fetching updates from $folder_name"
 
-git checkout raw-target
-rsync -av "$folder_path" ./ --exclude=.venv --exclude=.git --exclude=db.sqlite3 --exclude='*.pyc' --exclude="__pycache__" --exclude=".DS_Store"
-find "$folder_name" -type f | xargs grep -Il "" | xargs sed -i '' "s/$folder_name/{{cookiecutter.project_slug}}/g"
-mv "$folder_name/$folder_name" "$folder_name/{{cookiecutter.project_slug}}"
-mv "{{cookiecutter.project_slug}}" backup_"{{cookiecutter.project_slug}}"
-mv "$folder_name" "{{cookiecutter.project_slug}}"
-rm -rf backup_"{{cookiecutter.project_slug}}"
+echo "Checking if raw-$folder_name branch exists"
+branch_name="raw-$folder_name"
+if git rev-parse --verify "$branch_name" >/dev/null 2>&1; then
+    echo "Good! Branch already exists"
+else
+    echo "Createing new tracking branch $branch_name"
+    git checkout -b "raw-$folder_name"
+
+    # move everything to a new folder
+    mkdir -p backup_cookie
+    rsync -av ./ backup_cookie
+    # remove everything from current folder
+    find . -not -name 'backup_cookie' | xargs rm -rf
+    # move back .git
+    mv backup_cookie/.git .
+ 
+    echo "Deploying base project. Provide same inputs you used there."
+    cookiecutter backup_cookie .
+
+    # commit changes
+    git add . -A
+    git commit -m "Deployed base project"
+fi
+
+echo "fetching new changes"
+rsync -av "$folder_path" ./ --exclude=.venv --exclude=.git
 git add . -A
 git commit -m "Synced changes from $folder_name"
 
 
-echo "triaging changes..."
-git checkout target-tracker
-git merge main
-git merge raw-target --no-commit
-
-echo "show upstream changes"
+echo "staging changes..."
 git checkout main
-git diff target-tracker...
+change_hash=git log -1 --pretty=format:%H "$branch_name"
+git cherry-pick --no-commit "$change_hash"
