@@ -19,7 +19,9 @@ else
     find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".venv" ! -name "backup_cookie" | xargs rm -rf
  
     echo "Deploying base project. Provide same inputs you used there."
-    cookiecutter --directory=backup_cookie  .
+    cookiecutter --directory=backup_cookie  -o cookie-project
+    mv cookie-project/* .
+    rm -rf cookie-project backup_cookie
 
     # commit changes
     git add . -A
@@ -27,7 +29,7 @@ else
 fi
 
 echo "fetching new changes"
-rsync -av "$folder_path" ./ --exclude=.venv --exclude=.git
+rsync -av "$folder_path/" ./ --exclude=.venv --exclude=.git
 git add . -A
 git commit -m "Synced changes from $folder_name"
 
