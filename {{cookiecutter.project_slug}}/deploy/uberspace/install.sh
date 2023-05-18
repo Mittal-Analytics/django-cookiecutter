@@ -17,7 +17,7 @@ ln -s /home/{{cookiecutter.uberspace_login}}/ENV ~/webapps/{{cookiecutter.projec
 
 # https://lab.uberspace.de/guide_django.html
 # install uwsgi
-pip3.9 install uwsgi --user
+pip3.11 install uwsgi --user
 cp uwsgi.ini ~/etc/services.d/uwsgi.ini
 mkdir -p ~/uwsgi/apps-enabled
 touch ~/uwsgi/err.log
@@ -48,7 +48,6 @@ uberspace web header set {{cookiecutter.domain_name}}/static gzip on
 uberspace web header set {{cookiecutter.domain_name}}/static gzip_comp_level 6
 uberspace web header set {{cookiecutter.domain_name}}/static gzip_types "text/plain text/css text/xml application/json application/javascript application/xml+rss application/atom+xml image/svg+xml"
 
-
 # instructions to setup git push
 echo "Remote setup done"
 echo "Run these on local"
@@ -56,4 +55,4 @@ echo "git remote add live {{cookiecutter.uberspace_login}}:repos/{{cookiecutter.
 echo "git push live"
 echo "ssh {{cookiecutter.uberspace_login}}"
 echo "vi ENV"
-echo "python3.9 manage.py createsuperuser --settings={{cookiecutter.project_slug}}.settings.production"
+echo "python3.11 manage.py createsuperuser --settings={{cookiecutter.project_slug}}.settings.production"
