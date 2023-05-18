@@ -14,14 +14,12 @@ else
 
     # move everything to a new folder
     mkdir -p backup_cookie
-    rsync -av ./ backup_cookie
+    rsync -a ./ backup_cookie --exclude=.venv --exclude=.git
     # remove everything from current folder
-    find . -not -name 'backup_cookie' | xargs rm -rf
-    # move back .git
-    mv backup_cookie/.git .
+    find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".venv" ! -name "backup_cookie" | xargs rm -rf
  
     echo "Deploying base project. Provide same inputs you used there."
-    cookiecutter backup_cookie .
+    cookiecutter --directory=backup_cookie  .
 
     # commit changes
     git add . -A
