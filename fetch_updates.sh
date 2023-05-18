@@ -20,8 +20,8 @@ else
  
     echo "Deploying base project. Provide same inputs you used there."
     cookiecutter -o cookie-project cookie-template
-    mv cookie-project/* .
-    rm -rf cookie-project cookie-template
+    mv cookie-project "{{cookiecutter.project_slug}}"
+    rm -rf cookie-template
 
     # commit changes
     git add . -A
@@ -29,12 +29,12 @@ else
 fi
 
 echo "fetching new changes"
-rsync -av "$folder_path/" ./ --exclude=.venv --exclude=.git
+rsync -av "$folder_path/" "./{{cookiecutter.project_slug}}/" --exclude=.venv --exclude=.git
 git add . -A
 git commit -m "Synced changes from $folder_name"
 
 
 echo "staging changes..."
 git checkout main
-change_hash=git log -1 --pretty=format:%H "$branch_name"
+change_hash=$(git log -1 --pretty=format:%H "$branch_name")
 git cherry-pick --no-commit "$change_hash"
