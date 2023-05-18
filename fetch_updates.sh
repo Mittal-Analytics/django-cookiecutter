@@ -8,6 +8,7 @@ echo "Checking if raw-$folder_name branch exists"
 branch_name="raw-$folder_name"
 if git rev-parse --verify "$branch_name" >/dev/null 2>&1; then
     echo "Good! Branch already exists"
+    git checkout "raw-$folder_name"
 else
     echo "Createing new tracking branch $branch_name"
     git checkout -b "raw-$folder_name"
