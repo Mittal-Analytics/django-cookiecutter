@@ -17,4 +17,7 @@ echo "triaging changes..."
 git checkout target-tracker
 git merge main
 git merge raw-target --no-commit
-git diff main
+
+echo "show upstream changes"
+git checkout main
+git diff target-tracker...
