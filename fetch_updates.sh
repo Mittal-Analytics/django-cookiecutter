@@ -19,8 +19,8 @@ else
     find . -mindepth 1 -maxdepth 1 ! -name ".git" ! -name ".venv" ! -name "cookie-template" | xargs rm -rf
  
     echo "Deploying base project. Provide same inputs you used there."
-    cookiecutter -o cookie-project cookie-template
-    mv cookie-project "{{cookiecutter.project_slug}}"
+    cookiecutter -o . cookie-template
+    mv "$folder_name" "{{cookiecutter.project_slug}}"
     rm -rf cookie-template
 
     # commit changes
