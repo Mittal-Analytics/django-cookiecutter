@@ -13,12 +13,28 @@
   {% endraw %}
 </head>
 <body>
-  {% raw %}{% block content %}
+  {% raw %}
+  <div class="breadcrumbs">{% block breadcrumbs %}{% endblock %}</div>
+
+  {% block content %}
   <h1>Start Building</h1>
   <p class="mute">Build something great.</p>
 
-  <h2>Edit this page</h2>
-  <p class="mute">Edit <code>index.html</code> to edit this page.</p>
+  <h2>Deployment on uberspace</h2>
+  <p class="mute">You can deploy this just now on Uberspace.</p>
+
+  <pre>
+    <code>
+      # check instructions in deploy/uberspace/install.sh
+    </code>
+  </pre>
+
+  <h2>Other things</h2>
+  <p class="mute">You still need to do few more things.</p>
+
+  <ol>
+    <li>Setup email in production. Update SMTP credentials.</li>
+  </ol>
   {% endblock %}{% endraw %}
 </body>
 </html>
