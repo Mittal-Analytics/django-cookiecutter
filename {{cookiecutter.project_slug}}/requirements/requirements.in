@@ -13,7 +13,7 @@ pytz
 geoip2
 
 # Run the following after updating this file:
-#    pip-compile --upgrade --output-file=requirements/requirements.txt requirements/requirements.in --resolver=backtracking
+# uv pip compile requirements/requirements.in --upgrade -o requirements/requirements.txt
 #
 # to list new packages: pip list --outdated --not-required
 # to sync pip installations: pip-sync requirements/requirements.txt
