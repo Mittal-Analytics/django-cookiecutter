@@ -47,7 +47,8 @@ Setup the local env:
 
 ```bash
 python3 -m venv .venv
-pip install -r requirements.txt
+uv pip install -r requirements.txt
+source .venv/bin/activate
 ```
 
 Create a new project using this package:
