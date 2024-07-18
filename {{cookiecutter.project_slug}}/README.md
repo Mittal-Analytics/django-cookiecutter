@@ -36,9 +36,7 @@ flush privileges;
 exit
 
 # install dependencies
-pip install --upgrade pip
-pip install wheel
-pip install -r requirements/requirements-dev.txt
+uv pip install -r requirements/requirements-dev.txt
 
 # install pre-commit hooks
 pre-commit install
