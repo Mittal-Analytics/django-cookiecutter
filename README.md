@@ -36,10 +36,13 @@ These are the specifics.
 
 ## How to use this?
 
-```
+```bash
 pip install --upgrade cookiecutter
 cookiecutter https://github.com/Mittal-Analytics/django-cookiecutter
 ```
+
+Use [this recipe](https://github.com/cookiecutter/cookiecutter/issues/784#issuecomment-839074042) to update an existing project.
+
 
 ## How to contribute?
 
