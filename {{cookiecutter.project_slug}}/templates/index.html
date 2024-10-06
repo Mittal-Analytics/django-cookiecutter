@@ -3,15 +3,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
 
     {# djlint:off #}
     <title>{% raw %}{% block title %}{% endraw %}{{cookiecutter.project_name}}{% raw %}{% endblock %}{% endraw %}</title>
     {# djlint:on #}
 
     {% raw %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/pico.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% endraw %}
   </head>
   <body>
@@ -21,27 +22,29 @@
     {# djlint:on #}
 
     {% block content %}
-      <h1>Start Building</h1>
-      <p class="mute">Build something great.</p>
+      <main class="container">
+        <h1>Start Building</h1>
+        <p class="mute">Build something great.</p>
 
-      <h2>Deployment on uberspace</h2>
-      <p class="mute">You can deploy this just now on Uberspace.</p>
+        <h2>Deployment on uberspace</h2>
+        <p class="mute">You can deploy this just now on Uberspace.</p>
 
-      {# djlint:off #}
-      <pre>
-        <code>
-          # check instructions in deploy/uberspace/install.sh
-        </code>
-      </pre>
-      {# djlint:on #}
+        {# djlint:off #}
+        <pre>
+          <code>
+            # check instructions in deploy/uberspace/install.sh
+          </code>
+        </pre>
+        {# djlint:on #}
 
-      <h2>Other things</h2>
-      <p class="mute">You still need to do few more things.</p>
+        <h2>Other things</h2>
+        <p class="mute">You still need to do few more things.</p>
 
-      <ol>
-        <li>Install memcache on server if you are using it.</li>
-        <li>Setup email in production. Update SMTP credentials.</li>
-      </ol>
+        <ol>
+          <li>Install memcache on server if you are using it.</li>
+          <li>Setup email in production. Update SMTP credentials.</li>
+        </ol>
+      </main>
     {% endblock %}{% endraw %}
   </body>
 </html>
