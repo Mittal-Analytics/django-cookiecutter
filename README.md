@@ -61,5 +61,5 @@ cookiecutter https://github.com/Mittal-Analytics/django-cookiecutter
 
 Make changes in that project. Then fetch changes from that repo:
 ```
-bash fetch_updates.sh
+bash fetch_updates.sh path/to/project
 ```
