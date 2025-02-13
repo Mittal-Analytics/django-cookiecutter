@@ -98,10 +98,13 @@ WSGI_APPLICATION = "{{cookiecutter.project_slug}}.wsgi.application"
 DATABASES = {
     "default": env.db(),
 }
+{% if cookiecutter.database == "mysql" %}
 DATABASES["default"]["OPTIONS"] = {
     "sql_mode": "STRICT_ALL_TABLES",
     "charset": "utf8mb4",
 }
+{% endif %}
+
 # number of seconds to retain connections
 CONN_MAX_AGE = 600
 

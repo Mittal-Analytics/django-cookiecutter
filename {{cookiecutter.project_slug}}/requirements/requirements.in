@@ -2,10 +2,10 @@ django
 uwsgi
 ipython
 
-{%- if cookiecutter.database == "postgres" -%}
+{% if cookiecutter.database == "postgres" %}
 pgvector
 psycopg[binary]
-{%- else -%}
+{% else %}
 mysqlclient
 {% endif %}
 sqlparse
