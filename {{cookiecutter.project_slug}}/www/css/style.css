@@ -19,7 +19,7 @@
   --base: hsla(202, 0%, 100%);
   --page-base: hsla(202, 0%, 90%);
 
-  --ink-900: hsla(202, 0%, 100%);
+  --ink-900: hsla(202, 0%, 15%);
   --ink-600: hsla(202, 0%, 40%);
 
   --links: hsla(202, 98%, 53%);
@@ -83,6 +83,11 @@ body {
 
   font-family: "Newsreader", serif;
   font-size: 1.6rem;
+}
+
+main {
+  background: var(--base);
+  padding: 16px;
 }
 
 button {
@@ -231,7 +236,6 @@ ul.no-style li {
   padding: 0;
   margin: 0;
 }
-
 /* errors */
 .errorlist {
   color: red;
@@ -284,7 +288,6 @@ textarea:focus {
   border-color: var(--links);
   outline: none;
 }
-
 /* breadcrumbs */
 .breadcrumbs:empty {
   display: none;

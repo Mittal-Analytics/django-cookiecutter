@@ -23,16 +23,32 @@
         <h1>Start Building</h1>
         <p class="mute">Build something great.</p>
 
-        <h2>Deployment on uberspace</h2>
-        <p class="mute">You can deploy this just now on Uberspace.</p>
+        <h2>Deployment</h2>
+        <p class="mute">You can deploy in seconds using Uberspace or Docker.</p>
 
-        {# djlint:off #}
-        <pre>
-          <code>
-            # check instructions in deploy/uberspace/install.sh
-          </code>
-        </pre>
-        {# djlint:on #}
+        <h3>Uberspace</h3>
+        <pre><code># check instructions in deploy/uberspace/install.sh</code></pre>
+
+        <h3>Docker</h3>
+
+        <ol>
+          <li>
+            Setup Server: <a href="https://team.screener.in/coding%20recipes/server-setup.md">guide</a>
+          </li>
+          <li>
+            Install Docker: <a href="https://team.screener.in/coding%20recipes/server-setup.md#install-docker">guide</a>
+          </li>
+          <li>
+            Copy contents of Docker deployment to root: <code>mv deploy/docker/* ./</code>
+          </li>
+          <li>
+            Remove other deployment: <code>rf -rf deploy</code>
+          </li>
+          <li>
+            Setup <a href="https://team.screener.in/coding%20recipes/git%20push%20deployment.md"><code>git push</code></a> deployment on remote machine.
+          </li>
+        </ol>
+        <pre><code># check instructions in deploy/docker/install.sh</code></pre>
 
         <h2>Other things</h2>
         <p class="mute">You still need to do few more things.</p>

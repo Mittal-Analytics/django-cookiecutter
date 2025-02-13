@@ -46,18 +46,24 @@ multidict==6.1.0
     # via
     #   aiohttp
     #   yarl
-mysqlclient==2.2.7
-    # via -r requirements/requirements.in
+numpy==2.2.2
+    # via pgvector
 parso==0.8.4
     # via jedi
 pexpect==4.9.0
     # via ipython
+pgvector==0.3.6
+    # via -r requirements/requirements.in
 prompt-toolkit==3.0.50
     # via ipython
 propcache==0.2.1
     # via
     #   aiohttp
     #   yarl
+psycopg==3.2.4
+    # via -r requirements/requirements.in
+psycopg-binary==3.2.4
+    # via psycopg
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
