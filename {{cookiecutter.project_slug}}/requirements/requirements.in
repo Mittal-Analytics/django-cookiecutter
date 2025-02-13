@@ -15,6 +15,6 @@ geoip2
 # Run the following after updating this file:
 # uv pip compile requirements/requirements.in --upgrade -o requirements/requirements.txt
 #
-# to list new packages: pip list --outdated --not-required
+# to list new packages: uv pip list --outdated
 # to sync pip installations: pip-sync requirements/requirements.txt
 # the sync will uninstall unused packages too

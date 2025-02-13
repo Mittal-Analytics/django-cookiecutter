@@ -19,8 +19,7 @@ git clone <repo-link>
 cd {{cookiecutter.project_slug}}
 
 # creating virtual env
-# python3 -m venv path/to/venv
-python3 -m venv .venv
+uv venv --python=python3.13
 source .venv/bin/activate
 
 # create a new database

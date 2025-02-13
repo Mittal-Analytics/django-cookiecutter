@@ -1,12 +1,6 @@
 -r requirements.txt
 
-# for generation of requirements
-pip-tools
-
 # for linting
-flake8
-black
-curlylint
 pre-commit
 
 # for debugging
