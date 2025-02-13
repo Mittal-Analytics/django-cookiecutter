@@ -1,7 +1,13 @@
 django
 uwsgi
 ipython
+
+{%- if cookiecutter.database == "postgres" -%}
+pgvector
+psycopg[binary]
+{%- else -%}
 mysqlclient
+{% endif %}
 sqlparse
 pymemcache
 

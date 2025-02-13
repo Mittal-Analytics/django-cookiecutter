@@ -11,7 +11,11 @@
 
 ## Getting the local server running
 
-- Install `mysql`: https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/
+{%- if cookiecutter.database == "postgres" -%}
+- Install `postgresql`: https://www.postgresql.org/download/
+{%- else -%}
+- Install `mysql`: https://dev.mysql.com/doc/refman/8.4/en/installing.html
+{% endif %}
 
 ```bash
 # Clone repository
@@ -23,6 +27,25 @@ uv venv --python=python3.13
 source .venv/bin/activate
 
 # create a new database
+{%- if cookiecutter.database == "postgres" -%}
+# check if we can login to shell
+psql -d postgres  # psql -d postgres -U postgres
+exit
+
+# create new user
+psql -d postgres -c "CREATE USER \"py-user\" WITH PASSWORD 'p@@sWord';"
+psql -d postgres -c "ALTER ROLE \"py-user\" CREATEDB;"
+
+# login to shell as user
+psql -d postgres -U "py-user"
+CREATE DATABASE {{cookiecutter.project_slug}}_db;
+CREATE DATABASE test_{{cookiecutter.project_slug}}_db;
+
+# Create PostgreSQL users
+GRANT ALL PRIVILEGES ON DATABASE {{cookiecutter.project_slug}}_db TO "py-user";
+GRANT ALL PRIVILEGES ON DATABASE test_{{cookiecutter.project_slug}}_db TO "py-user";
+\q
+{%- else -%}
 mysql -u root -p --default-character-set=utf8mb4
 CREATE DATABASE {{cookiecutter.project_slug}}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
 CREATE DATABASE test_{{cookiecutter.project_slug}}_db CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
@@ -33,6 +56,7 @@ grant all privileges on {{cookiecutter.project_slug}}_db.* to 'py-user';
 grant all privileges on test_{{cookiecutter.project_slug}}_db.* to 'py-user';
 flush privileges;
 exit
+{% endif %}
 
 # install dependencies
 uv pip install -r requirements/requirements-dev.txt
