@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
 
-    {# djlint:off #}
-    <title>{% raw %}{% block title %}{% endraw %}{{cookiecutter.project_name}}{% raw %}{% endblock %}{% endraw %}</title>
-    {# djlint:on #}
+    {% raw %}{# djlint:off #}
+    <title>{% block title %}{% endraw %}{{cookiecutter.project_name}}{% raw %}{% endblock %}</title>
+    {# djlint:on #}{% endraw %}
 
-    {% raw %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    {% endraw %}
+    {% raw %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endraw %}
   </head>
   <body>
     {% raw %}
@@ -44,6 +42,6 @@
           <li>Setup email in production. Update SMTP credentials.</li>
         </ol>
       </main>
-    {% endblock %}{% endraw %}
+    {% endblock content %}{% endraw %}
   </body>
 </html>
