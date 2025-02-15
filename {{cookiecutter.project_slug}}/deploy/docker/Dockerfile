@@ -14,6 +14,14 @@ RUN apt update && apt install -y \
 	vim \
 	libpoppler-cpp-dev
 
+# Create virtual env and use it automatically
+# https://docs.astral.sh/uv/guides/integration/docker/#installing-a-package
+RUN uv venv /opt/venv
+# Use the virtual environment automatically
+ENV VIRTUAL_ENV=/opt/venv
+# Place entry points in the environment at the front of the path
+ENV PATH="/opt/venv/bin:$PATH"
+
 # Pip install
 WORKDIR /app
 ADD ./requirements/ /app/requirements/
@@ -23,6 +31,7 @@ RUN uv pip install -r requirements/requirements.txt
 ADD . /app/
 
 # Not root
+# might need to run `chown www-data:www-data /data/www` on system level if the www directory are already created by other service
 USER www-data
 
 EXPOSE 8000
