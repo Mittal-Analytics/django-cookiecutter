@@ -21,6 +21,7 @@ MEDIA_URL = "/media/"
 # HTTPS settings
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = ["https://{{cookiecutter.domain_name}}"]
 
 # EMAIL CONFIGURATION
 # This is default used for error reports
