@@ -30,7 +30,6 @@ environ.Env.read_env(BASE_DIR / ".env")
 
 # Other important directories
 TEMP_ROOT = BASE_DIR / "tmp"
-DATA_ROOT = TEMP_ROOT / "data"
 STATIC_ROOT = TEMP_ROOT / "static"
 MEDIA_ROOT = TEMP_ROOT / "media"
 

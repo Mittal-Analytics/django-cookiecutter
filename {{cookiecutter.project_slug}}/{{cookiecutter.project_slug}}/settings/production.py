@@ -11,7 +11,6 @@ ALLOWED_HOSTS = [
 ]
 
 TEMP_ROOT = "/tmp"
-DATA_ROOT = Path("/home/{{cookiecutter.uberspace_login}}/data")
 WEB_ROOT = Path("/home/{{cookiecutter.uberspace_login}}/html")
 STATIC_ROOT = WEB_ROOT / "static"
 STATIC_URL = "/static/"
@@ -55,7 +54,7 @@ CACHES = {
     }
 }
 
-CACHE_MIDDLEWARE_KEY_PREFIX = "dj40"
+CACHE_MIDDLEWARE_KEY_PREFIX = "dj51"
 
 # cached_db is write-through cache where all reads are from cache
 # while writes in both in db and cache

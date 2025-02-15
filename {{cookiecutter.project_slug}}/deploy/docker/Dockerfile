@@ -3,12 +3,12 @@
 # OS Support also exists for jessie & stretch (slim and full).
 # See https://hub.docker.com/r/library/python/ for all supported Python
 # tags from Docker Hub.
-FROM python:3.13
+FROM ghcr.io/astral-sh/uv:python3.13-bookworm
 ENV PYTHONUNBUFFERED 1
 
 # Install Libraries
 # libpoppler-cpp-dev for pdftotext
-RUN apt-get update && apt-get install -y \
+RUN apt update && apt install -y \
 	cron \
 	unzip \
 	vim \
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
 # Pip install
 WORKDIR /app
 ADD ./requirements/ /app/requirements/
-RUN pip install -r requirements/requirements.txt
+RUN uv pip install -r requirements/requirements.txt
 
 # Add rest of the code
 ADD . /app/

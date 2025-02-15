@@ -5,7 +5,6 @@ from .base import *  # noqa
 ALLOWED_HOSTS = ["testserver"]
 
 TEMP_ROOT = os.path.join(BASE_DIR, "tmp", "tests")  # noqa
-DATA_ROOT = os.path.join(TEMP_ROOT, "data")
 
 
 # EMAIL CONFIGURATION
