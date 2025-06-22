@@ -3,6 +3,10 @@
 # for linting
 pre-commit
 
+# django typing
+django-types
+django-stubs-ext
+
 # for debugging
 django-debug-toolbar
 ipdb
