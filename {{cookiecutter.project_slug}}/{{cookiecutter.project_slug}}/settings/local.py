@@ -1,4 +1,8 @@
 from .base import *  # noqa
+import django_stubs_ext
+
+# add support for typing
+django_stubs_ext.monkeypatch()
 
 DEBUG = True
 ALLOWED_HOSTS = [
