@@ -14,3 +14,7 @@ ipdb
 # for tests
 factory-boy
 time-machine
+pytest
+pytest-django
+pytest-asyncio
+

@@ -76,6 +76,14 @@ python manage.py migrate
 python manage.py runserver
 ```
 
+## Running Tests
+
+```
+pytest
+pytest -k test_particular
+# recreate db
+pytest --create-db -k test_ws_chat
+```
 
 ## Deployment
 
