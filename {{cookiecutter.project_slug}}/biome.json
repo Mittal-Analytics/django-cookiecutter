@@ -1,21 +1,14 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
+  "_comment": "update this config using: npx @biomejs/biome migrate --write",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
     "useIgnoreFile": false
   },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": []
-  },
   "formatter": {
-    "useEditorconfig": true,
     "enabled": true,
     "indentStyle": "space"
-  },
-  "organizeImports": {
-    "enabled": true
   },
   "linter": {
     "enabled": true,
@@ -31,6 +24,13 @@
     "formatter": {
       "quoteStyle": "double"
     },
-    "globals": []
+    "globals": [
+      "dialogPolyfill",
+      "Utils",
+      "Typeahead",
+      "ShowAsFilter",
+      "Modal",
+      "Chart"
+    ]
   }
 }
