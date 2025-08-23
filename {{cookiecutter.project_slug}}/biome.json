@@ -1,6 +1,5 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
-  "_comment": "update this config using: npx @biomejs/biome migrate --write",
   "vcs": {
     "enabled": false,
     "clientKind": "git",
